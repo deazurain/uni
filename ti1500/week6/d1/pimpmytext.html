@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Pimp My Text!</title>
+		<link href="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk4-1/pimpmytext.css" rel="stylesheet" type="text/css" />
+
+		<!--
+			This is a widely-used JavaScript "library" with many useful functions,
+			including the $() function, which we need. We'll discuss it in class.
+			Please don't remove this link or change the following URL; leave it as-is!
+		-->
+		<script type="text/javascript" src="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk4-1/prototype.js"></script>
+
+		<!-- link to your script file here -->
+                <script type="text/javascript" src="pimp.js"></script>
+
+	</head>
+
+        <style>
+          textarea {
+            font-size: 10px;
+          }
+
+          body {
+            width: 700px;
+            margin: 0 auto;
+          }
+
+          div.control {
+            width: 120px;
+            margin: 0 30px 0 0;
+            float: left;
+          }
+
+          textarea.bling {
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration: blink;
+            color: green;
+          }
+
+        </style>
+
+	<body>
+		<h1>Pimp My Text</h1>
+		<div>
+			<img src="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk4-1/pimpin.jpg" alt="Marty Stepp, pimpin' it!" />
+		</div>
+
+		<!-- Your UI controls go here -->
+                <form>
+
+                  <fieldset>
+                    <legend>Text</legend>
+                    <textarea id="text" autofocus="autofocus"></textarea>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>Pimpification</legend>
+                    <div class="control"><button id="big" type="button">Bigger Pimpin'</button></div>
+                    <div class="control"><input id="bling" type="checkbox"/>Bling</div>
+                    <div class="control"><button id="snoop" type="button">Snoopify</button></div>
+                  </fieldset>
+
+                </form>
+
+	</body>
+</html>

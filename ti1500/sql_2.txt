@@ -1,0 +1,103 @@
+1. Geef de soorten waarbij het aantal van de artikelen van elk van deze soorten, die door minstens twee afdelingen worden verkocht, groter is dan 15 (srtc, aantal artikelen) . 
+
+interpretatie:
+geef (srtc, aantal artikelen) voor (soorten die door minstens twee afdelingen worden verkocht)
+
+-- 1 maak soort <-> afdeling tabel
+CREATE OR REPLACE VIEW srtc_afd AS
+SELECT DISTINCT srtc, afd
+FROM artikel JOIN verkart USING (art);
+
+-- 2 haal per soort het aantal afdelingen op
+CREATE OR REPLACE VIEW srtc_num_afd AS
+SELECT srtc,
+  (SELECT COUNT(srtc) FROM srtc_afd
+  WHERE srtc_afd.srtc = soort.srtc) AS num_afd
+FROM soort;
+
+-- 3 tel per soort (waarvoor het aantal afdelingen waarop de soort verkocht wordt groter dan twee is) het aantal artikelen van die soort
+SELECT srtc,
+  (SELECT COUNT(art) FROM artikel
+  WHERE srtc_num_afd.srtc = artikel.srtc) AS num_art
+FROM srtc_num_afd
+WHERE num_afd >= 2;
+
+2. Geef de afdelingen (afd, afdnaam) die meer dan één tiende van alle gele artikelen verkopen. 
+
+interpretatie:
+geef de afdelingen waarvoor geldt dat (aantal gele artikelen voor deze afdeling * 10 >= aantal gele artikelen)
+
+-- 1 
+SELECT afd, afdnaam
+FROM afdeling
+WHERE 
+  (SELECT COUNT(art) FROM artikel JOIN verkart USING (art) WHERE verkart.afd = afdeling.afd AND kleur = 'geel') * 10
+  >= (SELECT COUNT(art) FROM artikel WHERE kleur = 'geel')
+  
+3. Van welke afdelingen (afd) is het aantal verkopen het grootst? 
+
+interpretatie:
+selecteer het maximum van (aantal verkopen per afdeling)
+
+CREATE OR REPLACE VIEW afd_num_verkopen AS
+SELECT afd, (SELECT COUNT(*) FROM verkoop WHERE verkoop.afd = afdeling.afd) AS num
+FROM afdeling;
+
+SELECT afd
+FROM afd_num_verkopen
+WHERE num = (SELECT MAX(num) FROM afd_num_verkopen);
+
+4. 
+interpretatie
+geef van de dagen waarvoor geld (de dag was in 2002 en er werd geleverd en verkocht van de srtc 'hschoen') de dagen waarvoor geldt dat (hoeveelheid geleverd < hoeveelheid verkocht)
+
+-- 1 selecteer de dagen uit 2002 waarop een artikel van de soort hschoen geleverd en verkocht werd
+CREATE OR REPLACE VIEW vette_data AS
+SELECT DISTINCT datum FROM leverantie JOIN artikel USING (art)
+WHERE YEAR(datum) = 2002 AND srtc = 'hschoen' AND EXISTS (
+  SELECT * FROM verkoop JOIN artikel USING (art)
+  WHERE verkoop.datum = leverantie.datum AND srtc = 'hschoen'
+)
+
+-- 2 selecteer voor deze datumuns de hoeveelheden voor alle leveranties/verkopen voor artikelen van de soort hschoen
+SELECT * FROM vette_data
+WHERE
+  (SELECT SUM(hoeveelheid) FROM leverantie JOIN artikel USING (art)
+  WHERE leverantie.datum = vette_data.datum AND srtc = 'hschoen')
+  <
+  (SELECT SUM(hoeveelheid) FROM verkoop JOIN artikel USING (art)
+  WHERE verkoop.datum = vette_data.datum AND srtc = 'hschoen')
+  
+
+-- LOL there is no instance of this happening :O
+SELECT 
+  (SELECT SUM(hoeveelheid) FROM leverantie JOIN artikel USING (art)
+  WHERE leverantie.datum = vette_data.datum AND srtc = 'hschoen') AS levh, 
+  (SELECT SUM(hoeveelheid) FROM verkoop JOIN artikel USING (art)
+  WHERE verkoop.datum = vette_data.datum AND srtc = 'hschoen') AS verkh, 
+  datum FROM vette_data
+  
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5.  
+CREATE OR REPLACE VIEW afd_meubel AS
+SELECT afd, (SELECT COUNT(*) FROM verkart JOIN artikel USING (art)
+WHERE verkart.afd = afdeling.afd AND srtc = 'meubel') AS aantal
+FROM afdeling;
+
+SELECT COUNT(*) FROM afd_meubel
+WHERE afd_meubel.aantal != (SELECT COUNT(*) FROM artikel WHERE srtc = 'meubel')
+
