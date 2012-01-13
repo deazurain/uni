@@ -1,0 +1,11 @@
+Inleiding
+
+Dit rapport beschrijft de ervaringen van de projectgroep met het computer system project. Het doel van dit project is het programmeren van een robot.
+
+De robot wordt in een doolhof geplaatst en moet zelf de uitgang vinden. De robot is vormgegeven als een tank. Om uit het doolhof te komen kan de tank gebruik maken van een kompas. De tank heeft ook afstandsensoren zodat hij de muren kan registreren. 
+
+De taak van de projectgroep is om de tank te programmeren, zodat de tank gebruik kan maken van het kompas, zijn sensoren en zijn wielen. Het projectdoel is dat de tank, vanaf het moment dat je de tank aan zet, zonder menselijk ingrijpen zelfstandig uit het doolhof kan rijden.
+
+De projectgroep gaat de Pledge methode, of wel algoritme, gebruiken. Het Pledge algoritme laat de robot rechtdoor te rijden tot hij een obstakel tegen komt. Als de robot een obstakel tegen komt zal dit obstakel gevolgd worden tot dat de robot weer zijn oorspronkelijke richting kan vervolgen. Om de oorspronkelijke richting te bepalen gebruikt het Pledge algoritme een kompas. Het voordeel van het Pledge algoritme is dat er altijd een uitgang gevonden wordt en dat er geen het niet hoeft te registeren waar de robot in dit doolhof is.
+
+Om Pledge uit te kunnen voeren moet de robot kunnen sturen, wat wordt toegelicht in hoofdstuk 2. Als de robot een obstakel tegenkomt moet hij dit obstakel volgen, hoe dit precies in zijn werk gaat wordt beschreven in hoofdstuk 3. Terwijl dit obstakel gevolgd wordt moet de robot weten wanneer hij zijn originele richting weer heeft, dit proces wordt omschreven in hoofdstuk 4. In hoofdstuk 5 staan de conclusie en aanbevelingen. Ten slotte heeft dit verslag nog 2 bijlagen met daarin de werkverdeling en een gedetailleerde beschrijving van het Pledge algoritme.

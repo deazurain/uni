@@ -1,0 +1,17 @@
+sudo echo "Begin pack script " >> /var/log/kern.log
+sudo insmod pwm_module.ko
+sleep 1
+mknod /dev/lart c 121 0 
+
+echo "sleep 3 sec"
+sleep 3
+echo "./write"
+./writetofile/write 500 222 333
+sleep 2 
+./writetofile/write 100 30 23
+sleep 2
+echo "rmmod" 
+sudo rmmod pwm_module
+sleep 1
+echo "tail"
+tail /var/log/kern.log

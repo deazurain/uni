@@ -1,0 +1,1 @@
+cmd_/home/mick/uni/ti2720-d/svn/code/kernel/gpio_driver/pwm_module.ko := arm-unknown-linux-gnu-ld -EL  -r -o /home/mick/uni/ti2720-d/svn/code/kernel/gpio_driver/pwm_module.ko /home/mick/uni/ti2720-d/svn/code/kernel/gpio_driver/pwm_module.o /home/mick/uni/ti2720-d/svn/code/kernel/gpio_driver/pwm_module.mod.o

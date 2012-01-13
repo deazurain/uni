@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tank/!svn/ver/131/code/kernel/gpio_driver/writemodule/writetofile
+END
+backup
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tank/!svn/ver/131/code/kernel/gpio_driver/writemodule/writetofile/backup
+END
+write
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/tank/!svn/ver/131/code/kernel/gpio_driver/writemodule/writetofile/write
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tank/!svn/ver/131/code/kernel/gpio_driver/writemodule/writetofile/Makefile
+END
+writetofile.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/tank/!svn/ver/131/code/kernel/gpio_driver/writemodule/writetofile/writetofile.c
+END

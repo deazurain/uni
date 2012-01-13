@@ -1,0 +1,14 @@
+sudo echo "Begin pack script " >> /var/log/kern.log
+sudo insmod write_module.ko
+
+mknod /dev/lart c 121 0 
+echo "sleep 3 sec"
+sleep 1
+echo "./write"
+./writetofile/write 111 222 333
+sleep 1
+./writetofile/write 123 234 345
+sleep 1 
+sudo rmmod write_module
+sleep 1
+tail /var/log/kern.log

@@ -1,0 +1,23 @@
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/timer.h>
+
+static int init(void)
+{
+	printk(KERN_ALERT "Modlue starting.\n");
+	InitTimer(void);
+	return 0;\
+}
+
+static void time_exit(void)
+{
+	printk(KERN_ALERT "Module stopping.\n");
+	CleanupGPIO();
+	CleanupPPC();
+}
+
+InitTimer(void)
+{
+  
+}
+s

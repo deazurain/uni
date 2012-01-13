@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/tank/!svn/ver/85/code/kernel/hello_print_kernel
+END
+setup
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/setup
+END
+hello.mod.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/hello.mod.c
+END
+hello.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tank/!svn/ver/85/code/kernel/hello_print_kernel/hello.c
+END
+Thumbs.db
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/tank/!svn/ver/85/code/kernel/hello_print_kernel/Thumbs.db
+END
+hello.ko
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/hello.ko
+END
+Module.symvers
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/Module.symvers
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/README
+END
+kernelModule.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/tank/!svn/ver/61/code/kernel/hello_print_kernel/kernelModule.pdf
+END

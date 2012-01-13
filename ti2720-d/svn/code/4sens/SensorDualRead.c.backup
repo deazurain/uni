@@ -1,0 +1,130 @@
+/*
+ * Sensor.c
+ *
+ * Defines functions to read data from the Sensors
+ */
+
+#include "Sensor.h"
+
+// dependencies
+#include <stdio.h>
+#include <unistd.h>
+#include "HardwareConstants.h"
+#include "Median5Filter.h"
+#include "i2cio.h"
+
+// globals
+int fd = -1;
+FILE * logfd;
+
+int sset[2][2] = {{REG_SENSOR_SL, REG_SENSOR_FR}, {REG_SENSOR_FL, REG_SENSOR_SL}};
+int sval[2][2] = {{0,0},{0,0}};
+int smed[2][2] = {{0,0},{0,0}};
+Median5Filter sfil[2][2];
+int sseti = 0;
+
+// standard
+int Sensor_init() {
+  int i;
+ 
+  fd = i2c_InitFile(0);
+  logfd = fopen("log", "w");
+
+  for(i = 0; i < 2; i++) {
+    Median5Filter_init(&sfil[i][0]);
+    Median5Filter_init(&sfil[i][1]);
+  }
+
+  fprintf(logfd, "RL\t\tFL\t\tFR\t\tRR\n");
+  fprintf(logfd, "real\tmed\treal\tmed\treal\tmed\treal\tmed\n");
+  fflush(logfd);
+
+  return 0;
+}
+
+int Sensor_cleanup() {
+  return -1; // error
+}
+
+// specifique
+
+void startReading(int sensor_address) {
+  i2c_BindDevice(fd, sensor_address);
+  i2c_WriteByte(fd, REG_SENSOR_COMMAND, 0x50);
+}
+
+int waitAndRead(int sensor_address) {
+  int val = 0;
+  unsigned char res1;
+  unsigned char res2;
+  unsigned char res;
+
+ // wait for completion
+  i2c_BindDevice(fd, sensor_address);
+  val = 255;
+  while(val == 255) {
+    read(fd, &val, 1);
+    usleep(5000);
+  }
+  
+  // read sensor
+  res1 = i2c_ReadByte(fd, 2);
+  res2 = i2c_ReadByte(fd, 3);
+  res = (res1 << 8) + res2;
+
+  return res;
+}
+
+void Sensor_update() {
+
+  int v0;
+  int v1;
+
+  startReading(sset[sseti][0]);
+  startReading(sset[sseti][1]);
+
+  usleep(99000);
+
+  v0 = waitAndRead(sset[sseti][0]);
+  v1 = waitAndRead(sset[sseti][1]);
+
+  sval[sseti][0] = v0;
+  sval[sseti][1] = v1;
+
+  Median5Filter_addValue(&sfil[sseti][0], v0);
+  Median5Filter_addValue(&sfil[sseti][1], v1);
+
+  smed[sseti][0] = Median5Filter_getMedian(&sfil[sseti][0]);
+  smed[sseti][1] = Median5Filter_getMedian(&sfil[sseti][1]);
+
+  if(sseti > 0) {
+    sseti = 0;
+
+    fprintf(logfd, "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n",
+        sval[0][0], smed[0][0], 
+        sval[1][0], smed[1][0], 
+        sval[0][1], smed[0][1], 
+        sval[1][1], smed[1][1]);
+    fflush(logfd);
+  }
+  else {
+    sseti++;
+  }
+}
+ 
+
+int Sensor_getDistance(int sensor_id) {
+  switch(sensor_id) {
+    case Sensor_LEFT:
+      return smed[0][0];
+    case Sensor_FRONT_LEFT:
+      return smed[1][0];
+    case Sensor_FRONT_RIGHT:
+      return smed[0][1];
+    case Sensor_RIGHT:
+      return smed[1][1];
+    default:
+      return -1;
+  }
+}
+

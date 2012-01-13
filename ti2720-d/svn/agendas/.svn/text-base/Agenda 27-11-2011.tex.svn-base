@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\setlength{\parindent}{0mm}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+\pagestyle{empty}
+\huge
+Agenda \\
+\small
+Maandag 28 november 09:00\\
+Groep 6\\\\
+\normalsize
+\begin{tabular}{rl}
+Voorzitter & Jeroen Bareman \\
+Notulist & \\
+Aanwezigen & Jeroen Bareman, Mick van Gelderen, Luyt Visser, Jelle Licht, Niels, Roelof Sol \\\\
+\end{tabular}
+\emph{ }\\
+\begin{tabular}{ll}
+1. & opening \\
+2. & aanwezigheid \\
+3. & agenda vaststellen \\
+4. & notulen vorige vergadering \\
+5. & sensor plots \\
+6. & ontwerp \\
+6.1 & functies die we nodig hebben \\
+6.2 & Uml diagrammen \\
+7. & peerreview \\
+8. & W.V.T.T.K \\
+9. & Rondvraag \\
+10. & datum volgende vergadering, sluiting \\
+\end{tabular}
+\end{document}

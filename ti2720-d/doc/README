@@ -1,0 +1,62 @@
+1 The hardware
+
+The necessary data sheets can be found in this directory.
+
+1.1 LART board & robot
+
+More information about LART's hardware can be found on the official website 
+
+	http://www.lartmaker.nl/
+
+Information about the SA-1100 uP GPIOs operation can be found in the
+datasheet file Intel_SA1100_uP.pdf, section 9.1. The GPIOs are used to
+interface to the sensors. The robot hardware is described in
+rbrog02_manual.pdf and the pins and addresses in pins-addr.pdf.
+
+1.2 Sensors
+
+Information about the ultrasound sensors and compass can be found in
+the datasheets SRF02.pdf and CMPS03.pdf respectively.
+
+
+2 The software
+
+The software is in the "user-level-IO" and "kernel-module"
+subdirectories. Read the README files in both directories for
+information on how to build and execute programs on the robot and on
+how to build kernel modules.
+
+The book Linux Device Drivers, Third Edition from O'Reilly
+(ldd3_pdf.tar.bz2) contains further information on how to build
+loadable kernel modules. See also the code of the book examples
+(examples-ldd3.tar.gz).
+
+2.1 GPIO library (user-level-IO)
+
+Since control and reading of data is done through LART
+microprocessor's GPIOs, a library of low-level functions for GPIO
+control is provided in "user_gpio.h" and "user-gpio.c".  Note that
+before working with the GPIO registers, their physical addresses have
+to be mapped into a memory addresses (done by the InitGPIO function).
+
+2.2 I2C header file
+
+To be able to talk to the i2c port in /dev/i2c-0, you'll need to include
+the provided "i2c-dev.h". The one provided in the kernel sources won't
+work, as your program is not part of the Linux kernel.
+
+2.3  I2C addressing
+
+Addresses on the I2C bus are 7 bits wide and always accompanied by a mode
+bit that indicates a Read or Write action.
+
+  +-----------+-----+
+  |  address  | R/W |
+  +-----------+-----+
+   7         1   0
+
+By convention most documentation lists device addresses as 8-bit numbers, with
+the lower bit cleared, e.g. 0xC0 for the compass. The Linux kernel, however,
+expects the true 7-bit address, so one should shift the conventional address to
+the right by one bit, i.e. the Linux address for the compass is 0x60.
+

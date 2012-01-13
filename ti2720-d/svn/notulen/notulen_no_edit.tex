@@ -1,0 +1,55 @@
+\def\minfileversion{V1.8d}     %^^Aof minutes.sty
+\def\minfiledate{2009/12/04}   %^^Aof minutes.sty
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass{report}
+%%\documentclass{article}
+%%\documentclass{scrreprt}
+%%\documentclass{scrarctl}
+\usepackage[dutch]{babel}
+\usepackage{minutes}
+
+%%\usepackage{Evntlist}%\usepackage{Calendar}
+\title{Notulen}
+\author{\LaTeXe}
+\minutesstyle{
+    header   = {list}, %or {table},
+    vote     = {list}, %or {table},
+    contents = {true}, %or {false}
+}
+\begin{document}
+\maketitle
+\tableofcontents
+\selectlanguage{dutch}
+\inputminutes{notulen_template.tex}%Nederlandse notulen
+%%-----------------
+\appendix
+\selectlanguage{dutch}
+\chapter{Aanhangsel}
+\section{Lijst van besluiten in sample.tex}\besluitenlijst
+\section{Lijst van openstaande akties in sample.tex}\aktielijst
+\section{Lijst van bijlagen in sample.tex}\bijlagenlijst
+\section{Calendar}
+\prepareCal
+%%\begin{eventlist}{}{Sample}
+%%1 dec 2000 to 31 dec 2000
+%%\end{eventlist}
+\end{document}
+\endinput
+%%
+%% End of file `Sample.tex'.

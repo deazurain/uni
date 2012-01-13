@@ -1,0 +1,3 @@
+# sets up the environment 
+mknod /dev/lart c 121 0
+insmod pwm_module.ko

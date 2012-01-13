@@ -1,0 +1,12 @@
+Example how to compile, install, and access a loadable kernel module
+
+[read the documentation in 'kernelModule.pdf']
+
+0) make your own 'hello' kernel module and name it 'hello.c'
+1) compile your dummy kernel module in 'hello.c' by typing "make"
+2) connect to your LART through minicom
+3) download 'hello.ko' and the 'setup' script
+4) execute the 'setup' script by typing "sh setup"
+5) insert the kernel module by typing "insmod hello.ko", which yields the
+   message 'Lart kernel module inserted'
+6) read data from the /dev/lart file, for example, by typing "cat /dev/lart"

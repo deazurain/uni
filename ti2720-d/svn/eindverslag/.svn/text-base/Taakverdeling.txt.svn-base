@@ -1,0 +1,30 @@
+C code:
+
+Button.c | Jeroen
+Compass.c | Luyt
+DBG.c | Jelle
+Error.c | Jelle
+HardwareConstants.h | Mick
+i2cio.c | Mick en Jelle
+LED.c | Jelle
+main.o | Mick en Roelof
+Median5Filter.c | Mick en Jelle
+Pledge.c | Luyt
+Sensor.c | Mick en Jelle
+Motor.c | Roelof (Jeroen)
+GPIO2.c | Roelof (Jeroen)
+pwm_module | Roelof (Jeroen)
+user_gpio.c | Roelof (Jeroen)
+Jelle | refactorizing magix powah
+
+Verslag
+
+inleiding | Jeroen
+sturen | Roelof
+bocht tellen | Luyt
+muur knuffelen | Mick en Jelle
+conclusie | Jeroen
+
+opmaak | Jelle
+spelling, zinsbouw, samenhang bewerking | Jeroen (Jelle 2de controle)
+ 

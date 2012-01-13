@@ -1,0 +1,50 @@
+1.  Inleiding
+
+We moeten een robot door een doolhof laten rijden en we moeten uit het doolhof komen. De robot bestaat uit deze componenten ...
+
+
+2. sturen
+2.1 definitie probleem 
+2.2 aanpak (intro/motivatie pwm)
+2.3 implementatie pwm 
+      hier in alineas ingaan op code en elke alinea bestaat uit 1 ondervinding met bijbehorend probleem en oplossing
+2.4 aanbevelingen
+
+3. Muur knuffelen
+3.1 definitie probleem  
+      we hebben de afstand to de muur nodig voor het algoritme wat we gebruiken
+3.2 aanpak
+      we gaan afstandsensoren verwerken
+      muurknuffelalgoritme(plaatje ontwerpverslag)
+3.3 implementatie afstandsensoren
+      hier in alineas ingaan op code en elke alinea bestaat uit 1 ondervinding met bijbehorend probleem en oplossing
+3.4 implementatie muurknuffelalgorime
+3.5 aanbevelingen
+
+4. bocht tellen
+4.1 definitie probleem
+4.2 aanpak(intro motivatie aanpak(hoe heet deze aanpak?))
+4.3 implementatie compas
+      hier in alineas ingaan op code en elke alinea bestaat uit 1 ondervinding met bijbehorend probleem en oplossing
+4.4 aanbevelingen
+
+5 Dus we hebben pledge geimplementeerd dat werkte prima en we zijn blij en gelukkig en we raden iedereen in de wereld aan ook pledge te gebruiken en blij en gelukkig te worden.
+
+werkverdeling in bijlage(wie heeft wat geschreven iedereen een stuk code en verslag)
+
+------------------------------------------
+
+Taakverdeling:
+
+verdeling(deadline 7 januarie)
+  jeroen: inleiding, conclusie, werkverdeling
+  mick en jelle: hoofdstuk 5 
+  luyt: hoofdstuk 4
+  roelof: hoofdstuk 3 pwm
+
+jelle op zondag 8 januarie verzamelt stukken en maakt het verslag op in latex
+jeroen controleert spelling en herschrijft de stukken zodat het een verhaal wordt op maandag 9 januarie 
+jelle controleert na jeroen nog een 2de check van spelling en herschrijven
+VERSLAG AF!!!!
+
+

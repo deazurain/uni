@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/tank/!svn/ver/206/code/kernel
+END
+time.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/tank/!svn/ver/121/code/kernel/time.c
+END
+hello.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/tank/!svn/ver/27/code/kernel/hello.c
+END
+time.ko
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/tank/!svn/ver/196/code/kernel/time.ko
+END
+timer.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/tank/!svn/ver/196/code/kernel/timer.h
+END
+time.mod.o
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/tank/!svn/ver/196/code/kernel/time.mod.o
+END
+#hello.c#
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/tank/!svn/ver/196/code/kernel/%23hello.c%23
+END
+time.o
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/tank/!svn/ver/196/code/kernel/time.o
+END
+Module.symvers
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/tank/!svn/ver/196/code/kernel/Module.symvers
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/tank/!svn/ver/121/code/kernel/Makefile
+END
+time.c~
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/tank/!svn/ver/196/code/kernel/time.c~
+END
+time.mod.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/tank/!svn/ver/196/code/kernel/time.mod.c
+END

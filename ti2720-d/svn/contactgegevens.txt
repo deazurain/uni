@@ -1,0 +1,6 @@
+Naam              Telefoon    Email                   Studienummer    Netid
+Jeroen Bareman    0642040405  jeroenbareman@gmail.com 4035186         jbareman
+Roelof Sol        0618833822  roelofsol@gmail.com     4012194         rasol
+Mick van Gelderen 0648084171  mickfreeze@gmail.com    4091566         mmvangelderen
+Luyt Visser       0646309259  luytvisser@gmail.com    4036603         lrvisser
+Jelle Licht       0631640167  wordempire@gmail.com    4106946         jlicht

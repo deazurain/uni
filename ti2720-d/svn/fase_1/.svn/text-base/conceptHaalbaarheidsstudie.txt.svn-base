@@ -1,0 +1,97 @@
+Haalbaarheidsstudie IN2710-D
+
+Projectgroep 6
+Jeroen Bareman 4035186
+
+Roelof Sol 4012194
+Mick van Gelderen 4091566
+Luyt Visser 4016603
+Jelle Licht 4106946
+
+Inhoudsopgave
+1. Doelen
+2. Omgevingseisen
+3. Beschikbaar materiaal
+4. Invloed limited resources op doelen
+5. Aanbevelingen
+
+1. Doelen
+Het doel voor dit project is een robot programmeren die zelfstandig de uitgang van een
+doolhof kan vinden. Dit doolhof moet voldoen aan de gestelde omgevingseisen toegelicht in
+kop 2.
+Om het projectdoel te bereiken zal de robot moeten kunnen bewegen zonder te botsen en de
+uitgang kunnen vinden.
+Om de robot te laten bewegen moet deze kunnen draaien (om zijn as) en rechtdoor kunnen
+rijden. Dit zal geïmplementeerd moeten worden door de rupsbanden aan te sturen. De
+projectgroep verwacht dat dit met redelijke precisie zou moeten kunnen. Om ervoor te
+zorgen dat de robot niet botst zal deze de obstakels moeten ontwijken. Deze kan hij
+waarnemen met zijn sensoren. De positie van obstakels moet uitgerekend worden en het
+pad van de robot hier omheen geplant.
+Tenslotte moet de robot het doolhof kunnen verlaten. Hiervoor moet deze het doolhof
+kunnen waarnemen en paden kunnen uitrekenen.
+
+2. Omgevingseisen
+De robot moet de ruimte hebben om te kunnen draaien in het doolhof. Als dit niet het geval
+is kan het voor komen dat de robot tijdens het draaien vast komt te zitten, waarna uit het
+doolhof ontsnappen niet gaat lukken.
+De robot moet over alle paden van het doolhof kunnen rijden. Zo moet er genoeg wrijving
+met de ondergrond zijn en moet de robot door alle zichtbare gangen kunnen rijden.
+Het doolhof moet een uitgang hebben.
+
+3. Beschikbaar materiaal
+De basis is een chassis met twee rupsbanden. Deze worden elk door een aparte motor
+aangedreven zodat het mogelijk is om rond te draaien. In de chassis zit een batterij en een
+processing board met daarop een StrongARM SA-1100 processor die de mogelijkheid heeft
+om Linux kernel 2.6 te draaien. Deze kernel zal de andere componenten van de robot
+aansturen. Om met de kernel te communiceren en er eigen software op te zetten, wordt een
+seriële verbinding gebruikt.
+De randapparatuur die de processor zal gebruiken bestaat uit
+- Een “SN754410 Quadruple Half-H Driver” die twee motoren bevat, die elk apart de
+standen uit, vooruit , achteruit kunnen aannemen.
+- Vier “SRF02 Ultrasonic range finder” die afstanden kunnen bepalen om de 66ms met een
+minimale afstand tussen de 11 en 16 cm, afhankelijk van de temperatuur en andere factoren.
+Twee zijn er gemonteerd aan de voorkant en twee aan de zijkant.
+- Een “CMPS03 Robot Compass Module” die goed genoeg is om het magnetisch veld van de
+aarde te detecteren en een getal kan terug geven tussen de 0 en 359,9 graden.
+- Twee knoppen die gebruikt kunnen worden om input te geven.
+- Twee LEDs die gebruikt kunnen worden om feedback te geven.
+
+4. Invloed limited resources op doelen
+De beschikbare hardware limiteert samen met de omgeving de mogelijke methoden die
+gebruikt kunnen worden om het doel te bereiken.
+De meest voor de hand liggende beperkingen zijn de processorkracht en de hoeveelheid
+geheugen. Dit heeft directe consequenties voor de algoritmen die gekozen kunnen worden.
+De sensoren die op de robot zitten zijn van gemiddelde kwaliteit. Ze hebben bijna allemaal
+een verschillende standaard afwijking en moeten om geschikte metingen te krijgen
+afzonderlijk gekalibreerd worden.
+De software wordt ontwikkeld voor een embedded systeem. Dit betekent dat testen en
+debuggen lastiger is dan dat het zou zijn op een pc. De input hangt af van programma
+variabelen en metingen van sensoren. Om de programma variabelen te veranderen moet het
+programma opnieuw naar de robot geupload worden wat meer tijd kost dan het alleen
+compilen. De informatie die de sensoren leveren kan veranderd worden door de omgeving
+te veranderen of door met het programma neppe waarden te geven. De output bekijken is
+ook lastiger omdat, buiten de 2 leds om, de robot hiervoor verbonden moet worden met de
+computer. De robot moet een bepaald gedrag gaan vertonen. Het kost veel tijd om te
+observeren of de robot het gewenste gedrag vertoont waardoor er een aanzienlijke
+hoeveelheid tijd nodig is voor het testen.
+Naast de hierboven genoemde limiterende factoren die te maken hebben met de robot zelf,
+zijn er ook beperkingen die de omgeving waarin de robot moet functioneren met zich mee
+neemt. De gangen en kruispunten in het doolhof hebben een bepaalde breedte waar
+rekening mee gehouden moet worden. Dit betekent dat de sensoren belangrijk zijn en dat de
+signalen ervan zo nauwkeurig mogelijk uitgelezen moeten worden. Achteruit rijden om te
+keren is lastig.
+
+5. Aanbevelingen
+Zoals in kop 4. naar voren komt is de robot is een embedded system met weinig resources.
+Een aanbeveling is om een doohofalgoritme te gebruiken wat weinig resources gebruikt.
+Een goede oplossing hiervoor is het Pledge algoritme, want dit algoritme heeft de volgende
+passende eigenschappen: Het vind altijd de uitgang, het is snel en het gebruikt geen interne
+representatie van zijn omgeving. Omdat de robot geen map van de omgeving hoeft te maken
+kan robot zich primair bezig houden met de aansturing van de tank en het uitlezen van de
+sensoren.
+Als er bij de projectleden onderling vragen zijn, blijf dan niet zitten maar maak gebruik van
+de projectgroep. Een goeie methode is om vragen gelijk op de mail te zetten zodat alle
+projectleden hier gelijk over na kunnen denken of op kunnen reageren. Als deze problemen
+dan tijdens een vergadering worden besproken weet iedereen al waar het over gaat, dit
+scheelt tijd en zo kunnen we adequaat en efficiënt werken.
+
