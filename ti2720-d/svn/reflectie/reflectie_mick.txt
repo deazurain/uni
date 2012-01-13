@@ -1,0 +1,26 @@
+Reflectie TI2720-D: Computer Systems Project
+
+Auteur: Mick van Gelderen
+Studentnummer: 4091566
+Projectgroep: 6
+
+
+1. Wat heb ik geleerd
+Het Computer Systems Project heeft mij veel geleerd. Hoe er conventioneel gecommuniceerd wordt met randapparatuur en wat drivers eigenlijk zijn en wat hun taak is zijn voor mij de belangrijkste leertrajecten geweest met betrekking tot de opdracht. Ik kon voor het project al goed overweg met het schrijven van c code en dat kwam erg goed van pas. 
+
+Bij dit project is ook gebleken dat je met een beetje hardware al heel veel leuke dingen kunt doen. Het houd echter ook in dat er een hoop werk in het communiceren met de hardware en het filteren van gegevens zit. De tankjes die tot onze beschikking stonden waren al vrij uitgebreid met hun 4 ultrasone afstandssensoren, kompas, knoppen en motoren. 
+
+
+
+2. Hoe verliep het projectmatig werken
+Ik ben zeer positief over de leden in mijn project groep en over de opdracht van het project. Met de vorige projecten van de TU heb ik wat mindere ervaringen gehad waardoor ik mijn projectgroep zeer kon en kan waarderen. Er hing een relaxte sfeer maar iedereen was wel gemotiveerd en aan het werk. 
+
+Onze geschreven tussenproducten waren niet altijd van de hoogste kwaliteit. Naar mijn idee kwam dit door weinig na-controle van elkaars werk. Verschillende stukken tekst waren ook niet altijd helemaal in overeenstemming met elkaar. 
+
+Qua het projectmatig werken heb ik geleerd hoe je niet een vergadering moet leiden. De tweede keer dat ik voorzitter was ben ik flink aangepakt door onze begeleider omdat ik er een beetje té relaxed bij zat. De vergadering verliep ook erg langzaam. Ik wilde wel zeker weten dat ik niet te snel door alle punten heen schoot zodat mijn groepsleden niet terug hoefde te komen op een punt dat al besproken was zoals dat in eerdere vergaderingen af en toe wel gebeurde. 
+
+Gelukkig maar dat ik zo aangepakt ben want anders leer ik natuurlijk niks. Ik was dan ook zeer te vreden met onze begeleider omdat hij gestructureerd, kritisch, en ervaren was. 
+
+
+
+
