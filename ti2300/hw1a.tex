@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{algorithm2e}
+
+\title{I2300 Algoritmiek\\Homework Exercise 1a}
+
+\author{\begin{tabular}{l|l}Mick van Gelderen&409 1566\end{tabular}}
+
+\date{November 2011}
+
+\begin{document}
+
+\maketitle
+
+\vspace{10mm}
+
+\section*{Legal}
+I have discussed the excercises with Jelle Licht and Felix Akkerman. 
+
+\section{}
+Assuming that the boxes need to be transported in the same order as they arrived, there are 3 trucks which can each transport up to 5 weight required to ship the input 3, 3, 2, 2. 
+The first truck takes the first weight (3) and cannot take the second weight(3 as well) because of the maximum cargo weight. The second truck takes the second and third weight (3 and 2). The third truck then takes the last weight (2). 
+
+\section{}
+Asuming there are one or more weights and none of the weights exceed the maximum a truck can handle. 
+
+\vspace{10pt}
+
+\begin{algorithm}[H]
+\label{alg1}
+\caption{Calculate number of trucks required}
+\SetLine
+$M$\tcc*{the maximum weight per truck}
+$weights$\tcc*{the list of box weights}
+$t \gets 1$\tcc*{the number of trucks used}
+$a \gets 0$\tcc*{the current trucks' accumulated weight}
+\ForEach(\tcc*[f]{w becomes the current weight}){$weights$ as $w$}{
+  \uIf(\tcc*[f]{new weight fits in current truck}){$a + w \le M$}{
+    $a \gets a + w$\tcc*{put weight in current truck}
+  }
+  \Else(\tcc*[f]{new weight doesn't fit in current truck}){
+    $t \gets t + 1$\tcc*{get a new truck}
+    $a \gets w$\tcc*{put the weight in the new truck}
+  }
+}
+\end{algorithm}
+
+\section{}
+My version of the algorithm loops through all the boxes only once. The tightest worst-case upper bound then simply becomes $O(n)$.
+
+\section{}
+The boxes have to be handled by the order of arrival. This means that there are only two choices for a box: 1) put it in this truck, 2) put it in the next truck. An optimal algorithm will never put a box in the next truck if it fits in the current truck. My greedy algorithm adheres to this principle and so, by the law of common sense, generates an optimal solution
+
+\end{document}
+

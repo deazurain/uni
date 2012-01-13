@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{algorithm2e}
+
+\title{I2300 Algoritmiek\\Homework Exercise 2a}
+
+\author{\begin{tabular}{l|l}Mick van Gelderen&409 1566\end{tabular}}
+
+\date{November 2011}
+
+\begin{document}
+
+\maketitle
+
+\vspace{10mm}
+
+\section*{Legal}
+I have discussed the excercises with Jelle Licht and Felix Akkerman. 
+
+\section{}
+The optimal solution for this particular problem is contestant 2 and then contestant 1, this gives a total time of $4 + 6 + 3 + 2 = 15$.
+
+\section{}
+Asuming there are one or more weights and none of the weights exceed the maximum a truck can handle. 
+
+\vspace{10pt}
+
+\begin{algorithm}[H]
+\label{alg1}
+\caption{Calculate number of trucks required}
+\SetLine
+running times $r_{i}, ..., r_{n}$\;
+biking times $b_{i}, ..., b_{n}$\;
+swimming times $w_{i}, ..., w_{n}$\;
+$C$\tcc*{a list of contestant numbers from 1 to n}
+$S$\tcc*{a list of contestant starting times}
+\vspace{2pt}
+Sort $C$ by $r_{i} + b_{i} \le r_{i+1} + b_{i+1}$\;
+$S_{0} = 0$\;
+$S_{1} = w_{C_{1}}$\;
+\ForEach(\tcc*[f]{i becomes the number of the current contestant}){$C$ as $i$}{
+  $S_{i} \gets S_{i - 1} + w_{C_{i}}$\tcc*{set current contestants' start time to the last start time + his swim time}
+}
+
+\end{algorithm}
+
+\section{}
+The main loop of the algorithm is $O(n)$ but the sorting is $O(n\log{n})$. The sorting outweighs $O(n)$ so the algorithm has a tightest worst-case upper bound of $O(n\log{n})$. 
+
+\section{}
+Too tired...
+
+\end{document}
+
