@@ -1,4 +1,0 @@
-sudo insmod timer_module.ko
-sleep 2
-sudo rmmod timer_module
-tail /var/log/kern.log

@@ -1,2 +1,0 @@
-make
-cp pwm_module.ko ../../upload
