@@ -43,7 +43,7 @@ Median5Filter_getMedian(Median5Filter * this) {
   }
   r[mini] = 1;
   r[maxi] = 1;
-  for(i = 0; i < 5; i++) {
+  for(i = 0; i < 5; i++) { // go to the first unremoved value
     if(r[i] == 0) break;
   }
   mini = i;

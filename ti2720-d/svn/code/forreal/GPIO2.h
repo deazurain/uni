@@ -5,6 +5,7 @@
 #define BIT2MASK(x) (1UL << (x))
 #define MS_TO_NS(x)	(x * 1E6L)
 
+
 void InitGPIO2(void);
 void CleanupGPIO2(void);
 

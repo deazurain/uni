@@ -1,3 +1,5 @@
 Wall hugging
 
+Aanbeveling
+Elke tank heeft sensoren die net een beetje anders zijn. Voor wallhugging is het belangrijk dat de afstanden die het tankje aan probeert te houden afgestemd kunnen worden op een bepaalde tank. Het is ook mogelijk om bepaalde sensoren vaker uit te lezen dan andere om een grotere nauwkeurigheid te krijgen. Het is belangrijk om er rekening mee te houden dat de sensoren niet de loodrechte afstand tot een muur meten. Wanneer een sensor van de muur afdraait meet deze een grotere afstand. Het is mogelijk om de afstand tot de muur beter te bepalen door de tank wat langzamer te laten rijden en door de tank niet constant te laten bijsturen. Er onstaat bij deze methode wel het gevaar dat bepaalde bochten zo niet gehaald kunnen worden. 
 

@@ -1,18 +1,11 @@
 /*
  * Motor.c
- *
- * Defines functions that control the engines in order to 
- * control the movement tank
+ * Simple interface for GPIO2 that controlls the tank. 
  */
 
 #include "Motor.h"
 #include "GPIO2.h"
 #include "HardwareConstants.h"
-
-
-// dependencies
-
-// #include "?"
 #include "GPIO2.h"
 
 int Motor_init(void) {
@@ -59,10 +52,15 @@ void Motor_LeftBackward() {
   SetGPIOPin2(PIN_ENGINE_LEFT_BACKWARD);
 }
 
+
+// Set the percentage the left engine should run as part of pwm period.
+// see GPIO2.c for more info
 void Motor_setLeft(int percentage) {
   SetSpeedLeft(percentage);
 }
 
+// Set the percentage the right engine should run as part of pwm period.
+// see GPIO2.c for more info
 void Motor_setRight(int percentage) {
   SetSpeedRight(percentage);
 }

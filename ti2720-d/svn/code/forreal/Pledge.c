@@ -51,15 +51,15 @@ int main() {
 
     switch(state) {
     case PledgeState_FORWARD:
-      printf("PledgeState %d: forward\n", state);
+      //printf("PledgeState %d: forward\n", state);
       doForward();
       break;
     case PledgeState_TO_HUG:
-      printf("PledgeState %d: about to hug\n", state);
+      //printf("PledgeState %d: about to hug\n", state);
       doToHug();
       break;
     case PledgeState_HUG:
-      printf("PledgeState %d: hugging\n", state);
+      //printf("PledgeState %d: hugging\n", state);
       doHug();
       break;
     }
@@ -89,7 +89,7 @@ void doForward() {
     if(r < 10) r = 10;
   }
 
-  printf("Angle: %d\tl:%d\t, r:%d\n", angle, l, r);
+  //printf("Angle: %d\tl:%d\t, r:%d\n", angle, l, r);
 
   Motor_setLeft(l);
   Motor_setRight(r);
@@ -105,12 +105,12 @@ void doForward() {
 void doToHug() {
 
   Motor_LeftBackward();
-  Motor_setRight(24);
-  Motor_setLeft(24);
+  Motor_setRight(35);
+  Motor_setLeft(35);
 
   // state transition rules
   // turn untill there is nothing in front of the tank 
-  if(F > 24) {
+  if(F > 18) {
     Motor_LeftForward();
     state = PledgeState_HUG;
   }
@@ -118,22 +118,27 @@ void doToHug() {
 
 void doHug() {
 
-  if(R < 15) {
-     Motor_setRight(100);
+  if(R < 8) {
+     Motor_setRight(60);
      Motor_setLeft(40);
   }
-  else if(R > 20) {
-    printf("steering to right\n");
-     Motor_setLeft(100);
+  else if(R > 35) {
+    //printf("supersteering to right\n");
+    Motor_setLeft(90);
+    Motor_setRight(25);
+  }
+  else if(R > 11) {
+    //printf("steering to right\n");
+     Motor_setLeft(71);
      Motor_setRight(40);
   }
   else {
-    Motor_setLeft(100);
-    Motor_setRight(100);
+    Motor_setLeft(80);
+    Motor_setRight(80);
   }
 
   // state transition rules
-  if(F < 16) {
+  if(F < 14) {
     state = PledgeState_TO_HUG;
   }
   else if(turn_count == 0) {
@@ -212,9 +217,9 @@ void update() {
   if(FR == 0) FR = 999;
   F = (FL < FR) ? FL : FR; // minimum value of front sensor values
 
-  //printf("pledge update FL %d\tFR %d\tR %d\n", FL, FR, R);
-  printf("F:%d\tR:%d\tDir:%d\tTurnCnt*2:%d\n", F, R, Compass_getDirection(), turn_count);
+  ////printf("pledge update FL %d\tFR %d\tR %d\n", FL, FR, R);
+  //printf("F:%d\tR:%d\tDir:%d\tTurnCnt*2:%d\n", F, R, Compass_getDirection(), turn_count);
 
   //fprintf(fout, "Pledge.c\t sensors updated: F:%d, R:%d, Dir:%d\n, TurnCnt*2:%d", F, R, Compass_getDirection(), turn_count);
-  fflush(fout);
+  //fflush(fout);
 }
